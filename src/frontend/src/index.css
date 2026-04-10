@@ -1,0 +1,227 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-display: "Plus Jakarta Sans";
+    --font-body: "DM Sans";
+    --font-mono: "Geist Mono";
+    --radius: 0.75rem;
+
+    --background: 0.98 0.005 280;
+    --foreground: 0.18 0.02 280;
+    --card: 1.0 0.0 0;
+    --card-foreground: 0.18 0.02 280;
+    --popover: 1.0 0.0 0;
+    --popover-foreground: 0.18 0.02 280;
+
+    --primary: 0.55 0.3 305;
+    --primary-foreground: 0.98 0.005 305;
+
+    --secondary: 0.94 0.02 280;
+    --secondary-foreground: 0.3 0.02 280;
+    --muted: 0.94 0.02 280;
+    --muted-foreground: 0.5 0.015 280;
+
+    --accent: 0.65 0.25 195;
+    --accent-foreground: 0.18 0.02 195;
+
+    --destructive: 0.55 0.22 25;
+    --destructive-foreground: 0.98 0.005 25;
+
+    --border: 0.9 0.015 280;
+    --input: 0.9 0.015 280;
+    --ring: 0.55 0.3 305;
+
+    --chart-1: 0.55 0.3 305;
+    --chart-2: 0.65 0.25 195;
+    --chart-3: 0.78 0.2 85;
+    --chart-4: 0.62 0.28 345;
+    --chart-5: 0.5 0.28 270;
+
+    --sidebar: 0.98 0.005 280;
+    --sidebar-foreground: 0.18 0.02 280;
+    --sidebar-primary: 0.55 0.3 305;
+    --sidebar-primary-foreground: 0.98 0.005 305;
+    --sidebar-accent: 0.65 0.25 195;
+    --sidebar-accent-foreground: 0.18 0.02 195;
+    --sidebar-border: 0.9 0.015 280;
+    --sidebar-ring: 0.55 0.3 305;
+
+    --gradient-primary: linear-gradient(
+      135deg,
+      oklch(0.55 0.3 305),
+      oklch(0.65 0.25 195)
+    );
+    --gradient-accent: linear-gradient(
+      135deg,
+      oklch(0.62 0.28 345),
+      oklch(0.78 0.2 85)
+    );
+    --gradient-electric: linear-gradient(
+      135deg,
+      oklch(0.5 0.28 270),
+      oklch(0.55 0.3 305)
+    );
+  }
+
+  .dark {
+    --background: 0.12 0.01 280;
+    --foreground: 0.95 0.01 280;
+    --card: 0.16 0.015 280;
+    --card-foreground: 0.95 0.01 280;
+    --popover: 0.16 0.015 280;
+    --popover-foreground: 0.95 0.01 280;
+
+    --primary: 0.7 0.28 305;
+    --primary-foreground: 0.12 0.01 305;
+
+    --secondary: 0.2 0.02 280;
+    --secondary-foreground: 0.85 0.01 280;
+    --muted: 0.2 0.02 280;
+    --muted-foreground: 0.55 0.015 280;
+
+    --accent: 0.7 0.25 195;
+    --accent-foreground: 0.12 0.01 195;
+
+    --destructive: 0.65 0.19 22;
+    --destructive-foreground: 0.95 0.01 25;
+
+    --border: 0.25 0.015 280;
+    --input: 0.25 0.015 280;
+    --ring: 0.7 0.28 305;
+
+    --chart-1: 0.7 0.28 305;
+    --chart-2: 0.7 0.25 195;
+    --chart-3: 0.78 0.2 85;
+    --chart-4: 0.62 0.28 345;
+    --chart-5: 0.55 0.28 270;
+
+    --sidebar: 0.16 0.015 280;
+    --sidebar-foreground: 0.95 0.01 280;
+    --sidebar-primary: 0.7 0.28 305;
+    --sidebar-primary-foreground: 0.12 0.01 305;
+    --sidebar-accent: 0.7 0.25 195;
+    --sidebar-accent-foreground: 0.12 0.01 195;
+    --sidebar-border: 0.25 0.015 280;
+    --sidebar-ring: 0.7 0.28 305;
+
+    --gradient-primary: linear-gradient(
+      135deg,
+      oklch(0.7 0.28 305),
+      oklch(0.7 0.25 195)
+    );
+    --gradient-accent: linear-gradient(
+      135deg,
+      oklch(0.65 0.28 345),
+      oklch(0.78 0.2 85)
+    );
+    --gradient-electric: linear-gradient(
+      135deg,
+      oklch(0.55 0.28 270),
+      oklch(0.7 0.28 305)
+    );
+  }
+
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+  }
+}
+
+@font-face {
+  font-family: "Plus Jakarta Sans";
+  src: url("/assets/fonts/PlusJakartaSans.woff2") format("woff2");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "DM Sans";
+  src: url("/assets/fonts/DMSans.woff2") format("woff2");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Geist Mono";
+  src: url("/assets/fonts/GeistMono.woff2") format("woff2");
+  font-display: swap;
+}
+
+@layer utilities {
+  .transition-smooth {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* Scroll reveal states */
+  .reveal-hidden {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  .reveal-visible {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* Text gradient shorthand */
+  .text-gradient-primary {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .text-gradient-accent {
+    background: var(--gradient-accent);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+
+  .gradient-accent {
+    background: var(--gradient-accent);
+  }
+
+  .shadow-elevated {
+    box-shadow: 0 12px 24px -4px rgba(0, 0, 0, 0.1);
+  }
+
+  .shadow-subtle {
+    box-shadow: 0 2px 6px -1px rgba(0, 0, 0, 0.05);
+  }
+
+  .hover-lift {
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .hover-lift:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 32px -4px rgba(0, 0, 0, 0.12);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .reveal-hidden {
+    opacity: 1;
+    transform: none;
+  }
+
+  .reveal-visible {
+    transition: none;
+  }
+}

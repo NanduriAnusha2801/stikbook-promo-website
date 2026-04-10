@@ -1,0 +1,24 @@
+{
+  "overview": "Stikbook is a child-safe social media platform promoting young talent. This is a visually stunning animated promotional website showcasing the platform's features including AI content filtering, Stikcoins currency, and Stikdeals discount marketplace.",
+  "features": [
+    "Animated hero section with particle effects",
+    "AI Safety explainer with animated shield",
+    "Interactive profile type cards (Business vs Personal)",
+    "Stikcoins activity showcase with coin animations",
+    "Stikdeals coupon cards with hover effects",
+    "Animated stats counters",
+    "App download CTA with CSS phone mockup",
+    "Floating navigation with smooth scroll",
+    "Responsive design for all viewports"
+  ],
+  "category": "marketing",
+  "tags": [
+    "promotional",
+    "landing-page",
+    "youth",
+    "social-media",
+    "animations",
+    "stikbook"
+  ],
+  "last_updated": "2026-04-10T04:36:12.663Z"
+}
